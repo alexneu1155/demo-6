@@ -28,4 +28,4 @@ jobs:
       - name: In ra các lựa chọn đã chọn
         run: |
           echo "Target Env: ${{ inputs.env }}"
-          echo "Test tag: ${{ inputs.env }}"
+          echo "Test tag: ${{ inputs.test_tags }}"
