@@ -13,7 +13,7 @@ on:
           - production
         default: 'dev'
       test_tags:
-        description: "Nhập vào tag để chạy"
+        description: "Nhập vào tag để chạy (Format: @t1 hoặc @t1|@t2)"
         required: true
         type: string
 
@@ -29,3 +29,13 @@ jobs:
         run: |
           echo "Target Env: ${{ inputs.env }}"
           echo "Test tag: ${{ inputs.test_tags }}"
+      - name: Setup Nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+      - name: Cài đặt thư viện
+        run: npm i
+      - name: Cài đặt trình duyệt Playwright
+        run: npx playwright install --with-deps
+      - name: Chạy test
+        run: ENV=${{ inputs.env }} npx playwright test -g "${{ inputs.test_tag }}"

@@ -1,0 +1,18 @@
+{
+    "common": {
+        "suite_config": {},
+        "case_config": {}
+    },
+    "by_env": {
+        "dev": {
+            "suite_config": {
+                "url": "https://playwight.dev"
+            }
+        },
+        "production": {
+            "suite_config": {
+                "url": "https://playwight.production"
+            }
+        }
+    }
+}

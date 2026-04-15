@@ -8,8 +8,16 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.0",
-    "dotenv": "^17.4.2"
+    "@playwright/test": "^1.58.2",
+    "@types/lodash.merge": "^4.6.9",
+    "@types/node": "^25.4.0",
+    "allure-playwright": "^3.6.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "lodash.merge": "^4.6.2",
+    "mysql2": "^3.20.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.28"
   }
 }

@@ -1,9 +1,13 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../src/fixture/conf.fixture'
 
+// url dev = https://playwright.dev
+// url production = https://playwright.production
 test('has title', {
   tag: ["@t1"],
-}, async ({ page }) => {
+}, async ({ page, conf }) => {
   console.log("Running test on env: ", process.env.ENV);
+  console.log("Tagging person: ", process.env.TAGGING_PERSON);
+  console.log("Running test on url: ", conf.url);
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
