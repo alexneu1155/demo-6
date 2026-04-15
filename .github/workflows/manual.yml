@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       env:
-        description: 'Select the target enviroment'
+        description: 'Chọn môi trường'
         required: true
         type: choice
         options:
@@ -13,7 +13,7 @@ on:
           - production
         default: 'dev'
       test_tags:
-        description: "Enter tag of the test to run"
+        description: "Nhập vào tag để chạy"
         required: true
         type: string
 
