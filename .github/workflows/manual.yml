@@ -38,4 +38,11 @@ jobs:
       - name: Cài đặt trình duyệt Playwright
         run: npx playwright install --with-deps
       - name: Chạy test
-        run: ENV=${{ inputs.env }} npx playwright test -g "${{ inputs.test_tag }}"
+        run: ENV=${{ inputs.env }} npx playwright test -g "${{ inputs.test_tags }}"
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
