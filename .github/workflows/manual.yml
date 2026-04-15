@@ -1,0 +1,31 @@
+name: PWA103 - manual workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Select the target enviroment'
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
+        default: 'dev'
+      test_tags:
+        description: "Enter tag of the test to run"
+        required: true
+        type: string
+
+jobs:
+  execute-tests:
+    name: Run ${{ inputs.test_tag }} tests on ${{ inputs.env }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull code repo ve
+        uses: actions/checkout@v4
+      - name: In ra các lựa chọn đã chọn
+        run: |
+          echo "Target Env: ${{ inputs.env }}"
+          echo "Test tag: ${{ inputs.env }}"
